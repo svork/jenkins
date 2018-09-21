@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Esta é a minha primeira pipeline usando Jenkins'
+        sh 'make'
       }
     }
     stage('Test') {
