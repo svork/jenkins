@@ -11,12 +11,18 @@ pipeline {
       steps {
         echo 'Estou rodando alguns testes'
         sh 'make check || true'
-        junit '**/target/*.xml'
+        //junit '**/target/*.xml'
       }
     }
     stage('Deploy') {
+      when {
+        expression {
+          currentBuild.result == null || currentBuild.result == 'SUCCESS'
+        }
+      }
       steps {
-        echo 'Fazend o deploy com Ansible, Chef ou até mesmo Puppet'
+        echo 'Ae, deu certo a build, vamos para produção!!1!'
+        echo 'Fazendo o deploy com Ansible, Chef ou até mesmo Puppet'
       }
     }
   }
