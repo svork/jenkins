@@ -5,6 +5,16 @@ pipeline {
       steps {
         echo 'Esta é a minha primeira pipeline usando Jenkins'
       }
-    } 
+    }
+    stage('Test') {
+      steps {
+        echo 'Estou rodando alguns testes'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Fazend o deploy com Ansible, Chef ou até mesmo Puppet'
+      }
+    }
   }
 }
