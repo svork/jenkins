@@ -5,3 +5,6 @@
 
 # Ignoring .pdf files
 *.pdf
+
+# Ignore the output of gcc
+ola_mundo
