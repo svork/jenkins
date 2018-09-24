@@ -25,7 +25,7 @@ pipeline {
         echo 'Fazendo o deploy com Ansible, Chef ou até mesmo Puppet'
       }
     }
-    stage('Print some strings') {
+    stage('Print_some_strings') {
       // Let's create some string
       def nome = 'Rodrigo'
       echo 'My name is ${nome}'
