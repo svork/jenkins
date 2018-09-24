@@ -1,6 +1,4 @@
 pipeline {
-  // Let's create some string
-  def nome = 'Rodrigo'
   agent any
   stages {
     stage('Build') {
@@ -25,12 +23,6 @@ pipeline {
       steps {
         echo 'Ae, deu certo a build, vamos para produção!!1!'
         echo 'Fazendo o deploy com Ansible, Chef ou até mesmo Puppet'
-      }
-    }
-    stage('Print_some_strings') {
-      steps {
-        echo 'My name is ${nome}'
-        echo "My name is ${nome}"
       }
     }
   }
