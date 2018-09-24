@@ -26,10 +26,12 @@ pipeline {
       }
     }
     stage('Print_some_strings') {
-      // Let's create some string
-      def nome = 'Rodrigo'
-      echo 'My name is ${nome}'
-      echo "My name is ${nome}"
+      steps {
+        // Let's create some string
+        def nome = 'Rodrigo'
+        echo 'My name is ${nome}'
+        echo "My name is ${nome}"
+      }
     }
   }
 }
