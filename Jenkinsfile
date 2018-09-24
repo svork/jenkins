@@ -1,4 +1,6 @@
 pipeline {
+  // Let's create some string
+  def nome = 'Rodrigo'
   agent any
   stages {
     stage('Build') {
@@ -27,8 +29,6 @@ pipeline {
     }
     stage('Print_some_strings') {
       steps {
-        // Let's create some string
-        def nome = 'Rodrigo'
         echo 'My name is ${nome}'
         echo "My name is ${nome}"
       }
