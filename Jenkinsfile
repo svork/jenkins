@@ -6,6 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        echo "Esta é a build número ${env.BUILD_ID}"
         echo 'Esta é a minha primeira pipeline usando Jenkins'
         sh 'make'
         echo "${nome}"
