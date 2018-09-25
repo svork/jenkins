@@ -43,7 +43,7 @@ pipeline {
         echo 'Ae, deu certo a build, vamos para produção!!1!'
         echo 'Fazendo o deploy com Ansible, Chef ou até mesmo Puppet'
         echo "${nome}"
-        echo "O meu usuário é: ${teste}"
+        echo "O meu usuário é: ${user}"
       }
     }
   }
