@@ -2,11 +2,15 @@ pipeline {
   agent any
   environment {
     nome = 'Rodrigo'
+
     // Dinamically created environment variables
     dinamico = """${sh(
       returnStdout: true,
       script: 'ip -4 a'
     )}"""
+
+    // Using credentials
+    user = credentials('teste')
   }
   stages {
     stage('Build') {
@@ -39,6 +43,7 @@ pipeline {
         echo 'Ae, deu certo a build, vamos para produção!!1!'
         echo 'Fazendo o deploy com Ansible, Chef ou até mesmo Puppet'
         echo "${nome}"
+        echo "O meu usuário é: ${teste}"
       }
     }
   }
