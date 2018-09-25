@@ -2,6 +2,11 @@ pipeline {
   agent any
   environment {
     nome = 'Rodrigo'
+    // Dinamically created environment variables
+    dinamico = """${sh(
+      returnStdout: true,
+      script 'ip -4 a'
+    )}"""
   }
   stages {
     stage('Build') {
@@ -18,6 +23,7 @@ pipeline {
         echo 'Estou rodando alguns testes'
         sh 'make check || true'
         //junit '**/target/*.xml'
+        echo "${dinamico}"
       }
     }
     stage('Deploy') {
