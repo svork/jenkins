@@ -30,8 +30,15 @@ pipeline {
       steps {
         echo 'Estou rodando alguns testes'
         sh 'make check || true'
+        post {
+          always {
         //junit '**/target/*.xml'
         echo "${dinamico}"
+          }
+          failure {
+            mail to: costa9rodrigo@gmail.com, subject: 'Pipeline has failed'
+          }
+        }
       }
     }
     stage('Deploy') {
