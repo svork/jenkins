@@ -5,7 +5,7 @@ pipeline {
     // Dinamically created environment variables
     dinamico = """${sh(
       returnStdout: true,
-      script 'ip -4 a'
+      script: 'ip -4 a'
     )}"""
   }
   stages {
