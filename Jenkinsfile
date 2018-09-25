@@ -6,7 +6,7 @@ pipeline {
     // Dinamically created environment variables
     dinamico = """${sh(
       returnStdout: true,
-      script: 'ip -4 a'
+      script: 'uname -a'
     )}"""
 
     // Using credentials
@@ -43,7 +43,8 @@ pipeline {
         echo 'Ae, deu certo a build, vamos para produção!!1!'
         echo 'Fazendo o deploy com Ansible, Chef ou até mesmo Puppet'
         echo "${nome}"
-        echo "O meu usuário é: ${user}"
+        echo "O meu usuário é: ${user_USR}"
+        echo "O meu senha é: ${user_PSW}"
       }
     }
   }
