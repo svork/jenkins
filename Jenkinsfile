@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  parameters {
+    string(name: 'Faculdade', defaultValue: 'USP', description: 'Nome da sua faculdade')
+  }
   environment {
     nome = 'Rodrigo'
 
@@ -20,6 +23,7 @@ pipeline {
         echo 'Esta é a minha primeira pipeline usando Jenkins'
         sh 'make'
         echo "${nome}"
+        echo "O nome da minha faculdade é: ${params.Faculdade}"
       }
     }
     stage('Test') {
