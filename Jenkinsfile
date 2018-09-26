@@ -1,7 +1,7 @@
 pipeline {
   agent any
   parameters {
-    string(name: 'Faculdade', defaultValue: 'USP', description: 'Nome da sua faculdade')
+    string(name: 'suco', defaultValue: 'Laranja', description: 'Sabor de suco favorito')
   }
   environment {
     nome = 'Rodrigo'
@@ -23,7 +23,7 @@ pipeline {
         echo 'Esta é a minha primeira pipeline usando Jenkins'
         sh 'make'
         echo "${nome}"
-        echo "O nome da minha faculdade é: ${params.Faculdade}"
+        echo "O sabor de suco que mais gosto é: ${params.suco}"
       }
     }
     stage('Test') {
@@ -49,14 +49,6 @@ pipeline {
         echo "O meu usuário é: ${user_USR}"
         echo "O meu senha é: ${user_PSW}"
       }
-    }
-    post {
-      always {
-        //junit '**/target/*.xml'
-        echo "${dinamico}"
-      }
-     failure {
-        mail to: costa9rodrigo@gmail.com, subject: 'Pipeline has failed'
     }
   }
 }
