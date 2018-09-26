@@ -9,7 +9,7 @@ pipeline {
   }
   post {
     always {
-      mail to: costa9rodrigo@gmail.com, subject: "Suco de Laranja"
+      mail to:"costa9rodrigo@gmail.com", subject: "Suco de Laranja"
     }
   }
 }
