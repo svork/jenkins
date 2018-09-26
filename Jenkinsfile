@@ -30,7 +30,6 @@ pipeline {
       steps {
         echo 'Estou rodando alguns testes'
         sh 'make check || true'
-        }
       }
     }
     stage('Deploy') {
