@@ -29,6 +29,15 @@ pipeline {
         echo "Marcha: ${params.marcha}"
       }
     }
+    stage ('Feed me data') {
+      input {
+        message "U mad bro?"
+        ok "You damn right"
+      }
+      steps {
+        echo "Need more input"
+      }
+    }
   }
   post {
     success {
