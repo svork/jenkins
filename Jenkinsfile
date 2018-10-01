@@ -21,6 +21,14 @@ pipeline {
         echo "Test driven development, way to go"
       }
     }
+    stage ('Show Parameters') {
+      steps {
+        echo "Nome: ${params.nome}"
+        echo "Texto Aleatório: ${params.txt01}"
+        echo "Ligado: ${params.status_maquina}"
+        echo "Marcha: ${params.marcha}"
+      }
+    }
   }
   post {
     success {
