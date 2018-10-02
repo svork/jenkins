@@ -1,7 +1,7 @@
 pipeline {
   agent any
   parameters {
-    string(name: 'suco', defaultValue: 'Laranja', description: 'Sabor de suco favorito')
+    string(name: 'suco', defaultValue: 'Água', description: 'Bebida Favorita')
   }
   environment {
     nome = 'Rodrigo'
@@ -29,7 +29,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Estou rodando alguns testes'
-        sh 'make check || true'
+        sh 'make check'
       }
     }
     stage('Deploy') {
